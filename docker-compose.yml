@@ -1,0 +1,49 @@
+version: "3"
+services:
+  web:
+    build: ./docker/web
+    ports:
+      - "8000:80"
+    depends_on:
+      - app
+    volumes:
+      - ./docker/web/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf:delegated
+      - ./docker/web/nginx/nginx.conf:/etc/nginx/nginx.conf:delegated
+      - ./backend:/var/www/html:delegated
+    working_dir: /var/www/html/
+  app:
+    build: ./docker/app
+    depends_on:
+      - mysql
+    volumes:
+      - ./backend:/var/www/html:delegated
+      - ./docker/app/php/php.ini:/usr/local/etc/php/php.ini:delegated
+    working_dir: /var/www/html/
+  mysql:
+    image: mysql:8.0.25
+    platform: linux/x86_64
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_DATABASE: main
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./docker/mysql/init.d:/docker-entrypoint-initdb.d:delegated
+  node:
+    build: ./docker/node
+    tty: true
+    ports:
+      - "3030:8080" # vue-cli
+      - "3000:3000" # browserSync
+      - "3001:3001" # browserSyncUI
+    #command: yarn build --watch
+    volumes:
+      - ./backend:/var/www/html/:delegated
+    working_dir: /var/www/html
+    #working_dir: /var/www/html/frontend
+volumes:
+  mysql-data:
