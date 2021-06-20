@@ -43,7 +43,7 @@ services:
     #command: yarn build --watch
     volumes:
       - ./backend:/var/www/html/:delegated
-    working_dir: /var/www/html
-    #working_dir: /var/www/html/frontend
+    #working_dir: /var/www/html
+    working_dir: /var/www/html/frontend
 volumes:
   mysql-data:
