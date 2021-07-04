@@ -1,0 +1,62 @@
+{
+  /* Linter and Formatter */
+  // common
+  "files.autoGuessEncoding": true,
+  "files.exclude": {
+    "**/.settings": true
+  },
+  "editor.detectIndentation": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  // formatter
+  "html.format.endWithNewline": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.indentHandlebars": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.renderWhitespace": "all",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true
+  },
+  // php cs fixer NOTE: Prease fix this path to your php-cs-fixer-v2.phar file path.
+  "php-cs-fixer.executablePath": "~/projects/labo/laravel-vue-cli/.vscode/php-cs-fixer-v2.phar",
+  "php-cs-fixer.rules": "@PSR2",
+  "php-cs-fixer.onsave": true,
+  "php-cs-fixer.formatHtml": true,
+  // prettier
+  "prettier.useTabs": false,
+  "prettier.tabWidth": 2,
+  "prettier.printWidth": 120,
+  "prettier.disableLanguages": ["markdown"],
+  "prettier.arrowParens": "always",
+  "prettier.trailingComma": "all",
+  "prettier.packageManager": "yarn",
+  // style
+  "css.validate": false,
+  "scss.validate": false,
+  // vetur
+  "vetur.format.options.tabSize": 2,
+  "vetur.format.options.useTabs": false,
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.format.defaultFormatter.ts": "prettier",
+  "vetur.format.defaultFormatter.scss": "prettier",
+  // lang
+  "[php]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "junstyle.php-cs-fixer"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.preferences.quoteStyle": "double",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
