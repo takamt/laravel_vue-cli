@@ -33,7 +33,7 @@ module.exports = () => {
     pages: {
       // 主要機能を扱うSPA
       main: {
-        entry: "src/main/main.js",
+        entry: "src/main/main.ts",
         template: "templates/base.html",
         filename: `../../resources/views/spa/main.blade.php`,
       },
