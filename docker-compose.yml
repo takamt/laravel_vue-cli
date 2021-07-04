@@ -40,7 +40,7 @@ services:
       - "3030:8080" # vue-cli
       - "3000:3000" # browserSync
       - "3001:3001" # browserSyncUI
-    #command: yarn build --watch
+    command: yarn build --watch
     volumes:
       - ./backend:/var/www/html/:delegated
     #working_dir: /var/www/html
