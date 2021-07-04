@@ -1,6 +1,17 @@
 module.exports = () => {
   const webpackConfig = {
-    module: {},
+    module: {
+      rules: [
+        {
+          test: /\.ts$/,
+          loader: "ts-loader",
+          options: {
+            transpileOnly: true,
+            appendTsSuffixTo: [/\.vue$/],
+          },
+        },
+      ],
+    },
     resolve: {
       extensions: [".js", ".ts", ".vue", ".json"],
       alias: {

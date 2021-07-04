@@ -1,0 +1,29 @@
+{
+  "buildOnSave": false,
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["es6"],
+    "types": ["node", "reflect-metadata"],
+    "newLine": "LF",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "charset": "utf8",
+    "sourceMap": true,
+    "outDir": "./build",
+    "rootDir": ".",
+    "baseUrl": "./",
+    "removeComments": true,
+    "noEmitHelpers": true,
+    "importHelpers": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./src/**/*.vue"],
+  "exclude": ["node_modules"]
+}
