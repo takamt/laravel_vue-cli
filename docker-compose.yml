@@ -40,10 +40,10 @@ services:
       - "3030:8080" # vue-cli
       - "3000:3000" # browserSync
       - "3001:3001" # browserSyncUI
-    command: yarn build --watch
+    #command: yarn build --watch # please make enable when container created.
     volumes:
       - ./backend:/var/www/html/:delegated
-    #working_dir: /var/www/html
-    working_dir: /var/www/html/frontend
+    working_dir: /var/www/html # please make enable when container created.
+    #working_dir: /var/www/html/frontend # please make unable when container created.
 volumes:
   mysql-data:
